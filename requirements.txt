@@ -1,0 +1,13 @@
+# Code-o-dachi Requirements
+# This project uses only Python standard library modules
+# No external dependencies required!
+
+# Standard library modules used:
+# - tkinter (GUI framework)
+# - json (data persistence)
+# - os (file operations)
+# - time (timing functions)
+# - random (random events)
+# - datetime (time tracking)
+
+# Python version requirement: 3.6+
