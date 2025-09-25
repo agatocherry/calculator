@@ -2,8 +2,8 @@ import tkinter as tk
 
 # Window setup
 root = tk.Tk()
-root.title("Code-o-dachi")
-root.geometry("400x300")
+root.title("Calculator")
+root.geometry("400x500")
 
 label = tk.Label(root)
 label.pack(pady=50)
