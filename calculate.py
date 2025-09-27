@@ -44,8 +44,8 @@ def append_to_expression(value):
     # Handle special cases
     
     if typing_in_progress:
-        typing_in_progress = False  # Stop any ongoing typing
-        time.sleep(0.1)  # Small delay to let it stop
+        typing_in_progress = False
+        time.sleep(0.1) 
     
     if value == 'C':
         expression = ""

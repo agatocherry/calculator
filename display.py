@@ -37,4 +37,4 @@ def update_display():
         _text_var.set("0")
     else:
         _text_var.set(calc.get_expression()) 
-    _root.after(100, update_display)  # Update every 100 ms
+    _root.after(100, update_display)

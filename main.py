@@ -17,7 +17,6 @@ root.text.set("Calculator")
 label = disp.create_display_with_frame(root, root.text)
 # Initialize display for updates
 disp.init_display(root, root.text)
-# Start the update loop
 disp.update_display()
 
 # Button number here
