@@ -55,10 +55,10 @@ def append_to_expression(value):
         thread.daemon = True
         thread.start()
         expression = ""
-    elif value == '★':   
-        # expression += '★'
-    elif value == '❀':
-        # expression += '❀'
+    # elif value == '★':   
+    #     # expression += '★'
+    # elif value == '❀':
+    #     # expression += '❀'
     else:
         if value not in ['❤', '★', '❀', 'C']:  # Avoid duplicating special chars
             expression += str(value)    

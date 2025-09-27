@@ -2,6 +2,9 @@ import tkinter as tk
 import calculate as calc
 import display as disp
 
+# TODO: Ajouter la possibilité de taper au clavier !
+# TODO: Ajouter une typo pixelisée
+
 # Window setup
 root = tk.Tk()
 root.title("Calculator")
