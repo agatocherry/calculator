@@ -5,6 +5,8 @@ import calculate as calc
 _root = None
 _text_var = None
 _label = None
+_default_font_size = 24
+_min_font_size = 12
 
 def create_display_with_frame(root, text_var):
     """Create the display area with text label and decorative frame"""
@@ -14,10 +16,10 @@ def create_display_with_frame(root, text_var):
     
     # Display area container
     display_frame = tk.Frame(root, bg="#E2B8AD")
-    display_frame.pack(pady=42)
+    display_frame.pack(pady=(50,10))
     
     # Main text label with decorative background
-    _label = tk.Label(display_frame, bg="#CFA195", fg="white", font=("Arial", 24), 
+    _label = tk.Label(display_frame, bg="#CFA195", fg="white", font=("Pixelify Sans", 24), 
                      bd=5, padx=2, pady=10, width=15)
     _label.pack(pady=(0, 5))
     _label.config(textvariable=text_var)

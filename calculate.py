@@ -13,10 +13,12 @@ def get_expression():
 def calculate():
     global expression
     if expression:
-        # Replace calculator symbols with Python operators
         eval_expression = expression.replace('×', '*').replace('÷', '/')
         result = eval(eval_expression)
         expression = str(result)
+        if len(expression) > 10:
+            expression = expression[:10]
+            expression += "..."
         # print(f"Result: {expression}")
         # reset = True
 
@@ -27,8 +29,8 @@ def typing_effect(message):
     original_expression = expression
     
     for i, char in enumerate(message):
-        if not typing_in_progress:  # Allow interruption
-            expression = original_expression  # Restore original if interrupted
+        if not typing_in_progress:
+            expression = original_expression
             break
         expression = original_expression + message[:i+1]
         time.sleep(0.15)
@@ -41,7 +43,6 @@ def typing_effect(message):
 
 def append_to_expression(value):
     global expression, typing_in_progress
-    # Handle special cases
     
     if typing_in_progress:
         typing_in_progress = False
@@ -51,14 +52,21 @@ def append_to_expression(value):
         expression = ""
     elif value == '❤':
         expression = ""
-        thread = threading.Thread(target=typing_effect, args=("❤I love you❤",))
+        thread = threading.Thread(target=typing_effect, args=("❤ I love you ❤",))
         thread.daemon = True
         thread.start()
         expression = ""
-    # elif value == '★':   
-    #     # expression += '★'
-    # elif value == '❀':
-    #     # expression += '❀'
-    else:
-        if value not in ['❤', '★', '❀', 'C']:  # Avoid duplicating special chars
-            expression += str(value)    
+    elif value == '★':
+        expression = ""
+        thread = threading.Thread(target=typing_effect, args=("★ You shine ★",))
+        thread.daemon = True
+        thread.start()
+        expression = ""
+    elif value == '❀':
+        expression = ""
+        thread = threading.Thread(target=typing_effect, args=("❀ My flower ❀",))
+        thread.daemon = True
+        thread.start()
+        expression = ""
+    if value not in ['❤', '★', '❀', 'C']:
+        expression += str(value)    
